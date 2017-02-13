@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vue Starter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
+        <script src="https://use.fontawesome.com/401d303b4f.js"></script>
+    </head>
+    <body class="bg-green">
+
+        <div id="app">
+            <div class="mw6 center pa4">
+                <h1 class="f1 black-70">{{ title }} </h1>
+                <!--<a id="basic" class="link pv2 ph3 bg-white-20 hover-bg-white-40 black-70 br3">notification</a>-->
+                <div class="bt b--white-20">
+                    <h3 class="f3 white-60">Uses</h3>
+                    <ul class="white-60">
+                        <li v-for="item in includes">
+                            <a :href="item.url" class="link white-60 hover-black-70 ">{{item.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bt b--white-20 pv3">
+                    <h3 class="f3 white-60">Get Started</h3>
+                    <div class="bg-black-80 white pa3">
+                        <pre>
+    cd.. your-dir
+    npm start
+                        </pre>
+                    </div>
+                </div>
+                <div class="bt b--white-20">
+                    <h3 class="f3 white-60">To Do</h3>
+                    <ol class="white-60">
+                        <li v-for="todo in todos">{{todo.item}}</li>
+                    </ol>
+                </div>
+                
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="mw6 black-70 center tc">
+                <a v-for="link in footerLinks" class="link black-40 hover-white-80 mr4" :href="link.url"><i :class="link.icon" aria-hidden="true"></i> {{link.text}}</a>
+            </div>
+        </footer>
+        
+    <script src="app.js"></script>
+    </body>
+</html>
